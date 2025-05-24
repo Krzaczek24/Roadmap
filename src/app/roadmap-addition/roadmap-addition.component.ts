@@ -44,9 +44,11 @@ export class RoadmapAdditionComponent {
 
         this.roadmapService.add({
             id: this.id,
+            createdAt: new Date(),
+            createdBy: 'Krzaq',
             name: this.name
         })
 
-        this.router.navigate([''])
+        this.router.navigate(['/roadmap', this.id])
     }
 }

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core'
+import { DatePipe } from '@angular/common'
 import { RoadmapService } from '../../services/roadmap.service'
 import { ActivatedRoute, Router } from '@angular/router'
 import { RoadmapModel } from '../../models/roadmap.model'
 
 @Component({
     selector: 'app-roadmap',
-    imports: [],
+    imports: [DatePipe],
     templateUrl: './roadmap.component.html',
     styleUrl: './roadmap.component.css'
 })

@@ -1,15 +1,17 @@
 <div class="selector">
     @if (roadmapList.length > 0) {
-        <p>Choose roadmap:</p>
-        <select (change)="selectRoadmap($event)">
-            <option>-</option>
-            @for (roadmap of roadmapList; track $index) {
-                <option [value]="roadmap.id">{{roadmap.name}}</option>
-            }
-        </select>
+        <p>
+            <label>Choose roadmap:</label>
+            <select (change)="selectRoadmap($event)">
+                <option></option>
+                @for (roadmap of roadmapList; track $index) {
+                    <option [value]="roadmap.id">{{roadmap.name}}</option>
+                }
+            </select>
+        </p>
     } @else {
         <p class="no-roadmaps">No roadmaps added!</p>
     }
 </div>
 
-<button [routerLink]="['/new-roadmap']">Add new roadmap</button>
+<p><button [routerLink]="['/new-roadmap']">Add new roadmap</button></p>
