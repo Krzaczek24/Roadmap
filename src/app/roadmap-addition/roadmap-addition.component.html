@@ -1,0 +1,14 @@
+<h1>New roadmap</h1>
+<div class="form">
+    <p>
+        <label>Id:</label>
+        <input id="id" type="text" [value]="id">
+    </p>
+    <p>
+        <label>Name:</label>
+        <input id="name" type="text" (input)="verifyName($event)">
+    </p>
+    <p><button (click)="addNewRoadmap()" [disabled]="message.length > 0">Create</button></p>
+    <p><label class="message">{{message}}</label></p>
+    <p><button (click)="router.navigate([''])">Go back</button></p>
+</div>
