@@ -1,7 +1,6 @@
 import { Component } from '@angular/core'
-import { v4 as uuidv4 } from 'uuid'
-import { RoadmapService } from '../../services/roadmap.service'
 import { Router } from '@angular/router'
+import { RoadmapService } from '../../services/roadmap.service'
 
 @Component({
     selector: 'app-roadmap-addition',
@@ -10,7 +9,6 @@ import { Router } from '@angular/router'
     styleUrl: './roadmap-addition.component.css'
 })
 export class RoadmapAdditionComponent {
-    public id: string = uuidv4()
     public name: string = ''
     public message: string = ' '
 
@@ -42,13 +40,11 @@ export class RoadmapAdditionComponent {
         if (this.message.length !== 0)
             return
 
-        this.roadmapService.add({
-            id: this.id,
-            createdAt: new Date(),
+        const id = this.roadmapService.add({
             createdBy: 'Krzaq',
             name: this.name
         })
 
-        this.router.navigate(['/roadmap', this.id])
+        this.router.navigate(['/roadmap', id])
     }
 }

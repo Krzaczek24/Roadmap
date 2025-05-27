@@ -32,9 +32,4 @@ export class RoadmapComponent implements OnInit {
 
         this.roadmap = roadmap
     }
-
-    public removeRoadmap() {
-        this.roadmapService.remove(this.roadmap.id)
-        this.router.navigate([''])
-    }
 }

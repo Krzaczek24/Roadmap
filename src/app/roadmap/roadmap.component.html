@@ -1,7 +1,12 @@
 <div class="container">
-    <p>Id: {{roadmap.id}}</p>
-    <p>Created at: {{roadmap.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}</p>
-    <p>Name: {{roadmap.name}}</p>
-    <p><button (click)="removeRoadmap()">Remove</button></p>
-    <p><button (click)="router.navigate([''])">Go back</button></p>
+    <div class="menu">
+        <p class="text">Id: {{roadmap.id}}</p>
+        <p class="text">Created at: {{roadmap.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}</p>
+        <p class="text">Name: {{roadmap.name}}</p>
+        <p class="button"><button (click)="router.navigate(['/roadmap', roadmap.id, 'settings'])">Settings</button></p>
+        <p class="button"><button (click)="router.navigate([''])">Go back</button></p>
+    </div>
+    <div class="graph">
+        
+    </div>
 </div>
