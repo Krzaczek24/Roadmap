@@ -1,1 +1,4 @@
-<p>track works!</p>
+<p class="title">{{track.title}}</p>
+@for (item of track.items; track $index) {
+    <app-item [data]="item"/>
+}

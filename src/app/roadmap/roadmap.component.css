@@ -1,7 +1,35 @@
-.container {
-    height: 100vh;
+.menu {
+    display: inline-flex;
+    gap: 12px;
+    padding: 6px 12px;
 
-    .graph {
-        width: 100vw;
+    .item {
+        padding: 6px 12px;
+        border-radius: 6px;
+        text-align: center;
+
+        &.item-text {
+            border: 1px lightgray solid;
+
+            .title {
+                font-weight: 600;
+            }
+
+            .value {
+                font-style: italic;
+            }
+        }
+
+        &.item-button {
+            padding: 0px;
+
+            button {
+                height: 100%;
+            }
+        }
     }
+}
+
+.graph {
+    width: 100vw;
 }

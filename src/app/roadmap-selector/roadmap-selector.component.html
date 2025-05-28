@@ -1,9 +1,8 @@
 <div class="selector">
     @if (roadmapList.length > 0) {
         <p>
-            <label>Choose roadmap:</label>
             <select (change)="selectRoadmap($event)">
-                <option></option>
+                <option>Choose roadmap</option>
                 @for (roadmap of roadmapList; track $index) {
                     <option [value]="roadmap.id">{{roadmap.name}}</option>
                 }

@@ -1,12 +1,34 @@
-<div class="container">
-    <div class="menu">
-        <p class="text">Id: {{roadmap.id}}</p>
-        <p class="text">Created at: {{roadmap.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}</p>
-        <p class="text">Name: {{roadmap.name}}</p>
-        <p class="button"><button (click)="router.navigate(['/roadmap', roadmap.id, 'settings'])">Settings</button></p>
-        <p class="button"><button (click)="router.navigate([''])">Go back</button></p>
+<div class="menu">
+    <div class="item item-text">
+        <div class="title">Id:</div>
+        <div class="value">{{roadmap.id}}</div>
     </div>
-    <div class="graph">
-        
+    <div class="item item-text">
+        <div class="title">Created at:</div>
+        <div class="value">{{roadmap.createdAt | date:'yyyy-MM-dd HH:mm:ss'}}</div>
+    </div>
+    <div class="item item-text">
+        <div class="title">Name:</div>
+        <div class="value">{{roadmap.name}}</div>
+    </div>
+    <div class="item item-button">
+        <button (click)="router.navigate(['/roadmap', roadmap.id, 'settings'])">Settings</button>
+    </div>
+    <div class="item item-button">
+        <button (click)="router.navigate([''])">Go back</button>
+    </div>
+</div>
+<div class="graph">
+    <div class="header">
+        @for (column of roadmap.columns; track $index) {
+            <div class="column-header">
+                <p class="column-title">{{column.title}}</p>
+            </div>
+        }
+    </div>
+    <div class="tracks">
+        @for (track of roadmap.tracks; track $index) {
+            <app-track [data]="track" />
+        }
     </div>
 </div>

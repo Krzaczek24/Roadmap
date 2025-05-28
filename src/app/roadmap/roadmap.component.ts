@@ -3,10 +3,11 @@ import { DatePipe } from '@angular/common'
 import { RoadmapService } from '../../services/roadmap.service'
 import { ActivatedRoute, Router } from '@angular/router'
 import { RoadmapModel } from '../../models/roadmap.model'
+import { TrackComponent } from '../track/track.component'
 
 @Component({
     selector: 'app-roadmap',
-    imports: [DatePipe],
+    imports: [DatePipe, TrackComponent],
     templateUrl: './roadmap.component.html',
     styleUrl: './roadmap.component.css'
 })
