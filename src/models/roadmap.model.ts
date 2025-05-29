@@ -8,4 +8,5 @@ export type RoadmapModel = {
     name: string
     columns: Array<ColumnModel>
     tracks: Array<TrackModel>
+    rowHeight: number
 }

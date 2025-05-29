@@ -14,6 +14,10 @@ import { TrackComponent } from '../track/track.component'
 export class RoadmapComponent implements OnInit {
     public roadmap!: RoadmapModel
 
+    public get widthSum(): number {
+        return this.roadmap.columns.reduce((acc, val) => acc + val.width, 0)
+    }
+
     constructor(
         private roadmapService: RoadmapService,
         private route: ActivatedRoute,

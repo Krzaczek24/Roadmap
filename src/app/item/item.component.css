@@ -1,0 +1,5 @@
+:host {
+    width: fit-content;
+    position: absolute;
+    background-color: cyan;
+}

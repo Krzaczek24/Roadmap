@@ -21,14 +21,14 @@
 <div class="graph">
     <div class="header">
         @for (column of roadmap.columns; track $index) {
-            <div class="column-header">
+            <div class="column-header" [style.width.%]="column.width*100/widthSum">
                 <p class="column-title">{{column.title}}</p>
             </div>
         }
     </div>
     <div class="tracks">
         @for (track of roadmap.tracks; track $index) {
-            <app-track [data]="track" />
+            <app-track [data]="track" [columns]="roadmap.columns" [rowHeight]="roadmap.rowHeight"/>
         }
     </div>
 </div>

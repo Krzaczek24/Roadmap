@@ -1,4 +1,11 @@
-<p class="title">{{track.title}}</p>
-@for (item of track.items; track $index) {
-    <app-item [data]="item"/>
-}
+<div class="track-title" [style.width.%]="titleColumnWidth" [style.height.px]="rowHeight">{{track.title}}</div>
+<div class="track-content" [style.width.%]="100-titleColumnWidth" [style.height.px]="rowHeight">
+    <!-- @for (column of columns; track $index; let index = $index) {
+        @if (index > 0) {
+            <div class="item-placeholder" [style.left.%]="columnPositionX(index)" [style.width.%]="contentColumnWidth(index)" [style.height.px]="rowHeight"></div>
+        }
+    } -->
+    @for (item of track.items; track $index) {
+        <app-item [data]="item" [style.left.%]="itemPositionX(item)"/>
+    }
+</div>

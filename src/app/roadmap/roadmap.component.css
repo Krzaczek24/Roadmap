@@ -32,4 +32,15 @@
 
 .graph {
     width: 100vw;
+
+    .header {
+        .column-header {
+            float: left;
+            text-align: center;
+        }
+    }
+
+    .tracks {
+
+    }
 }

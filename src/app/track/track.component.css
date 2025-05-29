@@ -1,0 +1,16 @@
+:host {
+    text-align: center;
+    width: 100%;
+}
+
+.track-title, .track-content {
+    float: left;
+}
+
+.track-title {
+    background-color: red;
+}
+
+.track-content {
+    background-color: yellow;
+}

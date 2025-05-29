@@ -37,20 +37,22 @@ export class RoadmapService {
             createdAt: new Date(),
             createdBy: roadmap.createdBy,
             name: roadmap.name,
+            rowHeight: 20,
             columns: [
-                { title: 'Column 1', width: 1 }, 
-                { title: 'Column 2', width: 1 }, 
-                { title: 'Column 3', width: 1 }
+                { width: 10 }, 
+                { title: 'Column 1', width: 30 }, 
+                { title: 'Column 2', width: 30 }, 
+                { title: 'Column 3', width: 30 }
             ],
             tracks: [{
                 title: 'Track 1',
                 items: [{
                     text: 'Item 1.1',
                     color: '#f00',
-                    startPoint: { columnIndex: 0, percent: 50 },
+                    startPoint: { columnIndex: 1, percent: 50 },
                     sections: [
-                        { endPoint: { columnIndex: 0, percent: 90 } },
-                        { endPoint: { columnIndex: 1, percent: 20 } }
+                        { endPoint: { columnIndex: 1, percent: 90 } },
+                        { endPoint: { columnIndex: 2, percent: 20 } }
                     ]
                 }]
             }, {
@@ -58,16 +60,16 @@ export class RoadmapService {
                 items: [{
                     text: 'Item 2.1',
                     color: '#0f0',
-                    startPoint: { columnIndex: 0, percent: 80 },
+                    startPoint: { columnIndex: 1, percent: 80 },
                     sections: [
-                        { endPoint: { columnIndex: 1, percent: 40 } }
+                        { endPoint: { columnIndex: 2, percent: 40 } }
                     ]
                 }, {
                     text: 'Item 2.2',
                     color: '#00f',
-                    startPoint: { columnIndex: 0, percent: 60 },
+                    startPoint: { columnIndex: 1, percent: 60 },
                     sections: [
-                        { endPoint: { columnIndex: 0, percent: 100 } }
+                        { endPoint: { columnIndex: 1, percent: 100 } }
                     ]
                 }]
             }]
